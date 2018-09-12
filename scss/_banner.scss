@@ -1,0 +1,51 @@
+.banner {
+    &-primary {
+        width: 100%;
+        height: 25rem;
+        background-image: url(../banner.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &-secondary {
+        display: flex;
+        justify-content: space-between;
+        height: 5rem;
+        background-color: rgb(250, 249, 249); //test
+        padding: 1rem 3rem;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+
+        &__info,
+        &__sale-alert {
+            height: 100%;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.5rem;
+        }
+
+        &__info {
+
+            & svg {
+                width: 3rem;
+                height: 3rem;
+                margin-right: 2rem;
+            }
+
+            & p span {font-weight: bold;}
+        }
+
+        &__sale-alert  {
+
+            & svg {
+                width: 3rem;
+                height: 3rem;
+                margin-right: 2rem;
+                fill: red;
+            }
+            
+        }
+    }
+}

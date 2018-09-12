@@ -1,0 +1,96 @@
+.grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 2rem;
+    justify-items: center;
+    align-items: center;
+}
+
+.item {
+    border: 1px solid rgb(226, 226, 226);
+    padding: 0 1rem 1rem 1rem;
+    //position: relative; //test
+
+    &-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: .7rem 2rem;
+        height: 4rem; //test
+
+        &--close {
+            justify-content: stretch;
+            padding: 0 0rem;
+        }
+
+        &__price--higher {
+            font-size: 1.9rem;
+            font-weight: bold;
+            color: red;
+            margin-right: 1rem;
+        }
+        &__price--lower {
+            font-size: 1.2rem;
+            justify-self: flex-start;
+            text-decoration: line-through;
+        }
+    }
+
+    &__cart {
+        //position: absolute;
+        //top: 0;
+        //left: 1rem;
+        height: 100%;
+        width: 40%; //test
+        font-size: 1.5rem;
+        //padding: 0 .7rem;
+        border: none;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 1rem;
+        //margin: 0 3rem;
+        background-color: transparent;
+        //background-color: rgb(240, 240, 240);
+
+        & svg {
+            width: 2rem;
+            height: 2rem;
+            padding: .5rem;
+            //margin-right: 1.2rem;
+        }
+
+        & p {margin-right:1rem;}
+    }
+
+    &__sale {
+        //position: absolute;
+        //top: 0;
+        //right: 0;
+        font-size: 1.5rem;
+        color: red;
+        border: 1px solid red;        
+        padding: .7rem .5rem;
+
+        & span {font-weight: bold;}
+    }
+
+    &__image {
+        width: 100%;
+        height: 15rem;
+    }
+    
+    &__description {
+        font-size: 1.2rem;
+        text-align: left;
+        margin-bottom: .5rem;
+    }
+
+    &__manufacturer {
+        font-size: 1rem;
+        text-align: left;
+        color: rgb(175, 175, 175);
+    }
+}
