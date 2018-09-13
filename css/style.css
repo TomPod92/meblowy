@@ -6,13 +6,13 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300; }
 
-/*10px by defaul*/
 t
 body {
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.7;
   box-sizing: border-box;
   background-image: linear-gradient(to right top, #FBFBFD, #BCBDBF);
@@ -25,12 +25,69 @@ body {
   min-height: 90vh; }
 
 .banner-primary {
-  width: 100%;
-  height: 25rem;
-  background-image: url(../banner.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; }
+  height: 15rem;
+  background-color: #EA2423;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 8rem;
+  line-height: normal;
+  text-transform: uppercase; }
+  .banner-primary__clock {
+    font-size: 2.5rem; }
+    .banner-primary__clock h2:nth-child(odd) {
+      color: white; }
+    .banner-primary__clock h2:nth-child(even) {
+      color: yellow; }
+  .banner-primary__sale h2:nth-child(odd) {
+    font-size: 1.5rem;
+    color: black; }
+  .banner-primary__sale h2:nth-child(even) {
+    font-size: 15rem;
+    color: yellow;
+    display: flex;
+    font-weight: 300; }
+    .banner-primary__sale h2:nth-child(even) span:nth-child(even) {
+      font-size: 9rem;
+      align-self: flex-start; }
+  .banner-primary__countDown {
+    width: 40rem;
+    height: 100%;
+    border: 3px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .banner-primary__countDown h2 {
+      font-size: 2.3rem;
+      color: white;
+      margin-bottom: 1.5rem; }
+    .banner-primary__countDown .date-row {
+      font-size: 4rem;
+      color: white; }
+    .banner-primary__countDown #day, .banner-primary__countDown #hour, .banner-primary__countDown #minute, .banner-primary__countDown #second {
+      position: relative; }
+    .banner-primary__countDown #day:after, .banner-primary__countDown #hour:after, .banner-primary__countDown #minute:after, .banner-primary__countDown #second:after {
+      position: absolute;
+      bottom: -2rem;
+      left: 50%;
+      transform: translate(-50%, 0);
+      font-size: 1.5rem;
+      color: black; }
+    .banner-primary__countDown #day:after {
+      content: 'DNI'; }
+    .banner-primary__countDown #hour:after {
+      content: 'GODZ'; }
+    .banner-primary__countDown #minute:after {
+      content: 'MIN'; }
+    .banner-primary__countDown #second:after {
+      content: 'SEK'; }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); }
+  100% {
+    transform: scale(1.35); } }
 
 .banner-secondary {
   display: flex;
@@ -56,7 +113,8 @@ body {
     width: 3rem;
     height: 3rem;
     margin-right: 2rem;
-    fill: red; }
+    fill: red;
+    animation: pulse 1.2s infinite alternate; }
 
 .grid {
   width: 100%;
@@ -69,7 +127,12 @@ body {
 
 .item {
   border: 1px solid #e2e2e2;
-  padding: 0 1rem 1rem 1rem; }
+  padding: 0 1rem 1rem 1rem;
+  backface-visibility: hidden;
+  transition: all .7s; }
+  .item:hover {
+    transform: scale(1.05);
+    box-shadow: 1rem 1rem 2rem rgba(85, 85, 85, 0.45); }
   .item-row {
     display: flex;
     align-items: center;
@@ -98,14 +161,18 @@ body {
     align-items: center;
     font-size: 1rem;
     background-color: transparent; }
+    .item__cart:hover svg {
+      transform: scale(1.3); }
     .item__cart svg {
       width: 2rem;
       height: 2rem;
-      padding: .5rem; }
+      padding: .5rem;
+      transition: all .7s; }
     .item__cart p {
       margin-right: 1rem; }
   .item__sale {
     font-size: 1.5rem;
+    text-align: center;
     color: red;
     border: 1px solid red;
     padding: .7rem .5rem; }
@@ -122,3 +189,114 @@ body {
     font-size: 1rem;
     text-align: left;
     color: #afafaf; }
+
+.button-row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 3rem 0; }
+
+.button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 4.2rem;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  overflow: hidden;
+  z-index: 10;
+  transition: all .4s; }
+  .button:hover {
+    color: white; }
+  .button:before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background-color: red;
+    transition: all .4s;
+    z-index: -1; }
+  .button:hover:before {
+    top: 0; }
+  .button:after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: red; }
+
+@media (max-width: 1200px) {
+  .container {
+    width: 90vw; } }
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 50%; } }
+
+@media (max-width: 800px) {
+  .container {
+    width: 95vw; }
+  .banner-secondary {
+    padding: 1rem 0; }
+  .item {
+    padding: 0; } }
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr; }
+  .item__image {
+    height: 25rem; }
+  .banner-secondary__info, .banner-secondary__sale-alert {
+    font-size: 1.25rem; } }
+
+@media (max-width: 600px) {
+  .banner-secondary {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 8rem;
+    margin-bottom: 0; }
+    .banner-secondary__info, .banner-secondary__sale-alert {
+      font-size: 1.5rem; }
+  .button {
+    font-size: 1.3rem;
+    letter-spacing: 0;
+    padding: .6rem 1rem; } }
+
+@media (max-width: 500px) {
+  html {
+    font-size: 42%; }
+  .item__description {
+    font-size: 2rem; }
+  .item__manufacturer {
+    font-size: 1.5rem; } }
+
+@media (max-width: 400px) {
+  .banner-secondary {
+    height: 6rem; }
+    .banner-secondary__info, .banner-secondary__sale-alert {
+      font-size: 1.2rem; }
+  .grid {
+    grid-gap: .5rem; }
+  .item__image {
+    height: 20rem; } }
+
+@media (max-width: 350px) {
+  .button-row {
+    flex-direction: column;
+    justify-content: center; }
+  .button {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    letter-spacing: 1;
+    padding: 1rem 1.5rem; } }

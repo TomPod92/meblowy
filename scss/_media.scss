@@ -1,0 +1,80 @@
+@media (max-width:1200px) {
+    .container {width: 90vw;}
+}
+
+@media (max-width: 1000px) {
+    html {font-size: 50%;}
+}
+
+@media (max-width: 800px) {
+    .container {width: 95vw;}
+    .banner-secondary {padding: 1rem 0;}
+    .item{padding: 0;}
+}
+
+@media (max-width: 700px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
+    .item__image {height: 25rem;}
+
+    .banner-secondary {
+        &__info,
+        &__sale-alert {font-size: 1.25rem;}
+    }    
+}
+
+@media (max-width: 600px) {
+    .banner-secondary {
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 8rem;
+        margin-bottom: 0;
+
+        &__info,
+        &__sale-alert {font-size: 1.5rem;}
+    }
+
+    .button {
+        font-size: 1.3rem;
+        letter-spacing: 0;
+        padding: .6rem 1rem;
+    }
+}
+
+@media (max-width: 500px) {
+    html {font-size: 42%;}
+
+    .item__description {font-size: 2rem;}
+    .item__manufacturer {font-size: 1.5rem;}
+}
+
+@media (max-width: 400px) {
+    .banner-secondary {
+        height: 6rem;
+        &__info,
+        &__sale-alert {font-size: 1.2rem;}
+    }
+
+    .grid {grid-gap: .5rem;}
+    .item__image {height: 20rem;}
+}
+
+@media (max-width: 350px) {
+    .button-row {
+       flex-direction: column;
+       justify-content: center;
+    }
+
+    .button {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        letter-spacing: 1;
+        padding: 1rem 1.5rem;
+    }
+}
+
+

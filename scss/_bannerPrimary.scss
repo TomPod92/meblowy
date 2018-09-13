@@ -1,0 +1,73 @@
+.banner-primary {
+    height: 15rem;
+    background-color: #EA2423;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 8rem;
+    line-height: normal;
+    text-transform: uppercase;
+
+    &__clock {
+        font-size: 2.5rem;
+
+        h2:nth-child(odd) {color: white;}
+        h2:nth-child(even) {color: yellow;}
+    }
+
+    &__sale {
+        
+        h2:nth-child(odd) {
+            font-size: 1.5rem;
+            color: black;
+        }
+
+        h2:nth-child(even) {
+            font-size: 15rem;
+            color: yellow;
+            display: flex;
+            font-weight: 300;
+
+            span:nth-child(even) {
+                font-size: 9rem;
+                align-self:flex-start;
+            }
+        }
+    }
+
+    &__countDown {
+        width: 40rem;
+        height: 100%;
+        border: 3px solid white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            font-size: 2.3rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .date-row {
+            font-size:4rem;
+            color: white;
+        }
+
+        #day, #hour, #minute, #second {position: relative;}
+        #day:after, #hour:after, #minute:after, #second:after {
+            position: absolute;
+            bottom: -2rem;
+            left: 50%;
+            transform: translate(-50%, 0);
+            font-size: 1.5rem;
+            color: black;
+        } 
+
+        #day:after {content: 'DNI';}
+        #hour:after {content: 'GODZ';}
+        #minute:after {content: 'MIN';}
+        #second:after {content: 'SEK';}
+    }
+}

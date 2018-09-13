@@ -6,11 +6,11 @@
     box-sizing: inherit;
 }
 
-html {font-size: 62.5%;} /*10px by defaul*/t
+html {font-size: 62.5%;font-family: 'Roboto', sans-serif;font-weight: 300;} t
 
 body {
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
+    //font-family: 'Georgia', serif;
+    font-weight: 300;
     line-height: 1.7;
     box-sizing: border-box;
     background-image: linear-gradient(to right top, #FBFBFD, #BCBDBF);
@@ -22,5 +22,5 @@ body {
     width: 80vw;
     margin: 0 auto;
     min-height: 90vh;
-    //background-color: rgb(240, 240, 240);
 }
+ 

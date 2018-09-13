@@ -5,17 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
     <title>Meblowy</title>
 </head>
 <body>
     <div class="container">
-        <!-- ----------------------BANNERS---------------------- -->
-        <div class="banner-primary"></div>
-        
-        <div class="banner-secondary">
+        <!-- -----------------------BANNER PRIMARY----------------------- -->
+        <div class="banner-primary">
+
+            <div class="banner-primary__clock">
+                <h2>Gorący</h2>
+                <h2>Czwartek</h2>
+            </div>
+
+            <div class="banner-primary__sale">
+                <h2>Rabaty nawet do</h2>
+                <h2>
+                    <span>80</span>
+                    <span>%</span> 
+                </h2>
+            </div>
+
+            <div class="banner-primary__countDown" id="demo">
+                <h2>Do końca pozostało:</h2>
+                <div class="date-row">
+                    <span id="day">4</span>:
+                    <span id="hour">11</span>:
+                    <span id="minute">16</span>:
+                    <span id="second">42</span>                    
+                </div>
+
+            </div>
+        </div>
+        <!-- ----------------------BANNER SECONDARY---------------------- -->
+         <div class="banner-secondary">
             <div class="banner-secondary__info">
                     <svg>
                         <use xlink:href="sprite.svg#icon-stopwatch"></use>
@@ -31,8 +56,7 @@
             </div>
         </div>
 
-        <!-- -----------------------GRID----------------------- -->
-
+        <!-- ----------------------------GRID---------------------------- -->
         <div class="grid">
 
             <div class="item">
@@ -43,7 +67,7 @@
                         </svg>
                         <p>sztuk: 1</p> 
                     </button>
-                    <div class="item__sale">oszczędzasz <span>2000 zł</span></div>
+                    <div class="item__sale">oszczędzasz <span>2000zł</span></div>
                 </div>
             <!-- -------------------------------------------------- -->
                 <img src="/kanapa.jpg" alt="Produkt" class="item__image">
@@ -68,7 +92,7 @@
                         </svg>
                         <p>sztuk: 1</p> 
                     </button>
-                    <div class="item__sale">oszczędzasz <span>2000 zł</span></div>
+                    <div class="item__sale">oszczędzasz <span>2000zł</span></div>
                 </div>
                 <!-- -------------------------------------------------- -->
                 <img src="/kanapa.jpg" alt="Produkt" class="item__image">
@@ -93,7 +117,7 @@
                         </svg>
                         <p>sztuk: 1</p> 
                     </button>
-                    <div class="item__sale">oszczędzasz <span>2000 zł</span></div>
+                    <div class="item__sale">oszczędzasz <span>2000zł</span></div>
                 </div>
                 <!-- -------------------------------------------------- -->
                 <img src="/kanapa.jpg" alt="Produkt" class="item__image">
@@ -118,7 +142,7 @@
                         </svg>
                         <p>sztuk: 1</p> 
                     </button>
-                    <div class="item__sale">oszczędzasz <span>2000 zł</span></div>
+                    <div class="item__sale">oszczędzasz <span>2000zł</span></div>
                 </div>
                 <!-- -------------------------------------------------- -->
                 <img src="/kanapa.jpg" alt="Produkt" class="item__image">
@@ -143,7 +167,7 @@
                         </svg>
                         <p>sztuk: 1</p> 
                     </button>
-                    <div class="item__sale">oszczędzasz <span>2000 zł</span></div>
+                    <div class="item__sale">oszczędzasz <span>2000zł</span></div>
                 </div>
                 <!-- -------------------------------------------------- -->
                 <img src="/kanapa.jpg" alt="Produkt" class="item__image">
@@ -168,7 +192,7 @@
                         </svg>
                         <p>sztuk: 1</p> 
                     </button>
-                    <div class="item__sale">oszczędzasz <span>2000 zł</span></div>
+                    <div class="item__sale">oszczędzasz <span>2000zł</span></div>
                 </div>
                 <!-- -------------------------------------------------- -->
                 <img src="/kanapa.jpg" alt="Produkt" class="item__image">
@@ -193,7 +217,7 @@
                         </svg>
                         <p>sztuk: 1</p> 
                     </button>
-                    <div class="item__sale">oszczędzasz <span>2000 zł</span></div>
+                    <div class="item__sale">oszczędzasz <span>2000zł</span></div>
                 </div>
                 <!-- -------------------------------------------------- -->
                 <img src="/kanapa.jpg" alt="Produkt" class="item__image">
@@ -218,7 +242,7 @@
                         </svg>
                         <p>sztuk: 1</p> 
                     </button>
-                    <div class="item__sale">oszczędzasz <span>2000 zł</span></div>
+                    <div class="item__sale">oszczędzasz <span>2000zł</span></div>
                 </div>
                 <!-- -------------------------------------------------- -->
                 <img src="/kanapa.jpg" alt="Produkt" class="item__image">
@@ -234,6 +258,15 @@
             </div>
             
         </div>
+
+        <!-- ----------------------BUTTONS---------------------- -->
+        <div class="button-row">
+            <div class="button button--two">Pozycji na stronie: 2</div>
+            <div class="button button--four">Pozycji na stronie: 4</div>
+            <div class="button button--eight">Pozycji na stronie: 8</div>
+        </div>
     </div>
+
+    <script src="javascript/coundown.js"></script>
 </body>
 </html>
