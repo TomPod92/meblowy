@@ -1,3 +1,7 @@
+:root {
+  --color-primary-red: #EA2423 ;
+  --color-primary-yellow: #ffef3a; }
+
 *,
 *::after,
 *::before {
@@ -26,30 +30,38 @@ body {
 
 .banner-primary {
   height: 15rem;
-  background-color: #EA2423;
+  background-color: var(--color-primary-red);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4rem 8rem;
+  padding: 3rem 4rem;
   line-height: normal;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden; }
   .banner-primary__clock {
-    font-size: 2.5rem; }
+    font-size: 2.5rem;
+    position: relative; }
     .banner-primary__clock h2:nth-child(odd) {
       color: white; }
     .banner-primary__clock h2:nth-child(even) {
-      color: yellow; }
-  .banner-primary__sale h2:nth-child(odd) {
-    font-size: 1.5rem;
-    color: black; }
-  .banner-primary__sale h2:nth-child(even) {
-    font-size: 15rem;
-    color: yellow;
-    display: flex;
-    font-weight: 300; }
-    .banner-primary__sale h2:nth-child(even) span:nth-child(even) {
-      font-size: 9rem;
-      align-self: flex-start; }
+      color: var(--color-primary-yellow); }
+  .banner-primary__sale {
+    margin-left: 15rem; }
+    .banner-primary__sale h2:nth-child(odd) {
+      transform: translate(2rem, 2rem);
+      font-size: 1.5rem;
+      color: black;
+      font-weight: 400; }
+    .banner-primary__sale h2:nth-child(even) {
+      font-size: 15rem;
+      color: var(--color-primary-yellow);
+      display: flex;
+      font-weight: 300; }
+      .banner-primary__sale h2:nth-child(even) span:nth-child(even) {
+        margin-top: 1.5rem;
+        font-size: 9rem;
+        align-self: flex-start; }
   .banner-primary__countDown {
     width: 40rem;
     height: 100%;
@@ -61,10 +73,12 @@ body {
     .banner-primary__countDown h2 {
       font-size: 2.3rem;
       color: white;
-      margin-bottom: 1.5rem; }
+      margin-bottom: .7rem;
+      font-weight: 300; }
     .banner-primary__countDown .date-row {
       font-size: 4rem;
-      color: white; }
+      color: white;
+      font-weight: 700; }
     .banner-primary__countDown #day, .banner-primary__countDown #hour, .banner-primary__countDown #minute, .banner-primary__countDown #second {
       position: relative; }
     .banner-primary__countDown #day:after, .banner-primary__countDown #hour:after, .banner-primary__countDown #minute:after, .banner-primary__countDown #second:after {
@@ -82,6 +96,38 @@ body {
       content: 'MIN'; }
     .banner-primary__countDown #second:after {
       content: 'SEK'; }
+  .banner-primary__bubble {
+    background: black;
+    padding: 1rem;
+    font-size: 1.7rem;
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+    position: absolute;
+    top: -10%;
+    left: 90%; }
+    .banner-primary__bubble:before {
+      content: "";
+      width: 0px;
+      height: 0px;
+      position: absolute;
+      border-left: 20px solid black;
+      border-right: 20px solid transparent;
+      border-top: 10px solid black;
+      border-bottom: 10px solid transparent;
+      left: 0px;
+      bottom: -19px; }
+    .banner-primary__bubble span:nth-child(odd) {
+      margin-right: .5rem; }
+    .banner-primary__bubble span:nth-child(even) {
+      font-weight: 300; }
+
+.dostawa {
+  position: absolute;
+  bottom: -5%;
+  left: 28%;
+  width: 9rem;
+  height: 9rem; }
 
 @keyframes pulse {
   0% {
@@ -95,20 +141,22 @@ body {
   height: 5rem;
   background-color: #faf9f9;
   padding: 1rem 3rem;
-  margin-bottom: 2rem;
-  text-transform: uppercase; }
+  margin-bottom: 2rem; }
   .banner-secondary__info, .banner-secondary__sale-alert {
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1.5rem; }
-  .banner-secondary__info svg {
-    width: 3rem;
-    height: 3rem;
-    margin-right: 2rem; }
-  .banner-secondary__info p span {
-    font-weight: bold; }
+  .banner-secondary__info {
+    text-transform: uppercase; }
+    .banner-secondary__info svg {
+      width: 3rem;
+      height: 3rem;
+      margin-right: 2rem;
+      fill: var(--color-primary-red); }
+    .banner-secondary__info p span {
+      font-weight: bold; }
   .banner-secondary__sale-alert svg {
     width: 3rem;
     height: 3rem;
@@ -120,10 +168,8 @@ body {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
   grid-gap: 2rem;
-  justify-items: center;
-  align-items: center; }
+  justify-items: center; }
 
 .item {
   border: 1px solid #e2e2e2;
@@ -145,7 +191,7 @@ body {
     .item-row__price--higher {
       font-size: 1.9rem;
       font-weight: bold;
-      color: red;
+      color: var(--color-primary-red);
       margin-right: 1rem; }
     .item-row__price--lower {
       font-size: 1.2rem;
@@ -160,6 +206,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     font-size: 1rem;
+    cursor: pointer;
     background-color: transparent; }
     .item__cart:hover svg {
       transform: scale(1.3); }
@@ -173,14 +220,14 @@ body {
   .item__sale {
     font-size: 1.5rem;
     text-align: center;
-    color: red;
-    border: 1px solid red;
+    color: var(--color-primary-red);
+    border: 1px solid var(--color-primary-red);
     padding: .7rem .5rem; }
     .item__sale span {
       font-weight: bold; }
   .item__image {
     width: 100%;
-    height: 15rem; }
+    height: auto; }
   .item__description {
     font-size: 1.2rem;
     text-align: left;
@@ -210,6 +257,7 @@ body {
   font-weight: 700;
   overflow: hidden;
   z-index: 10;
+  cursor: pointer;
   transition: all .4s; }
   .button:hover {
     color: white; }
@@ -220,7 +268,7 @@ body {
     left: 0;
     width: 100%;
     height: 200%;
-    background-color: red;
+    background-color: var(--color-primary-red);
     transition: all .4s;
     z-index: -1; }
   .button:hover:before {
@@ -232,11 +280,30 @@ body {
     left: 0;
     width: 100%;
     height: 6px;
-    background-color: red; }
+    background-color: var(--color-primary-red); }
+
+.show {
+  background-color: var(--color-primary-red);
+  color: white; }
 
 @media (max-width: 1200px) {
   .container {
-    width: 90vw; } }
+    width: 90vw; }
+  .banner-primary {
+    padding: 3rem 6rem; }
+    .banner-primary__countDown {
+      width: 30rem; } }
+
+@media (max-width: 1100px) {
+  .banner-primary__sale {
+    margin-left: 12rem; }
+    .banner-primary__sale h2:nth-child(odd) {
+      transform: translate(0, 0);
+      font-size: 1.5rem; }
+    .banner-primary__sale h2:nth-child(even) {
+      font-size: 11rem; }
+      .banner-primary__sale h2:nth-child(even) span:nth-child(even) {
+        font-size: 6rem; } }
 
 @media (max-width: 1000px) {
   html {
@@ -248,16 +315,44 @@ body {
   .banner-secondary {
     padding: 1rem 0; }
   .item {
-    padding: 0; } }
+    padding: 0; }
+  .banner-primary__sale {
+    margin: 0 2rem 0 13rem; }
+    .banner-primary__sale h2:nth-child(odd) {
+      font-size: 1.2rem; }
+    .banner-primary__sale h2:nth-child(even) {
+      font-size: 10rem; }
+      .banner-primary__sale h2:nth-child(even) span:nth-child(even) {
+        font-size: 6rem; }
+  .banner-primary__countDown h2 {
+    font-size: 1.7rem; }
+  .banner-primary__countDown .date-row {
+    font-size: 3rem; } }
 
 @media (max-width: 700px) {
   .grid {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr; }
-  .item__image {
-    height: 25rem; }
+  .banner-primary {
+    padding: 2rem 4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto; }
+    .banner-primary__sale h2:nth-child(odd) {
+      font-size: 1rem; }
+    .banner-primary__sale h2:nth-child(even) {
+      font-size: 10rem; }
+      .banner-primary__sale h2:nth-child(even) span:nth-child(even) {
+        font-size: 5rem; }
+    .banner-primary__clock {
+      margin: 3rem; }
+    .banner-primary__countDown {
+      height: 15rem; }
   .banner-secondary__info, .banner-secondary__sale-alert {
-    font-size: 1.25rem; } }
+    font-size: 1.25rem; }
+  .dostawa {
+    bottom: -3%;
+    left: 85%; } }
 
 @media (max-width: 600px) {
   .banner-secondary {
@@ -272,6 +367,18 @@ body {
     font-size: 1.3rem;
     letter-spacing: 0;
     padding: .6rem 1rem; } }
+
+@media (max-width: 540px) {
+  .banner-primary {
+    flex-direction: column; }
+  .banner-primary__sale {
+    margin: 0; }
+    .banner-primary__sale h2:nth-child(odd) {
+      font-size: 3rem; }
+    .banner-primary__sale h2:nth-child(even) {
+      font-size: 15rem; }
+      .banner-primary__sale h2:nth-child(even) span:nth-child(even) {
+        font-size: 7rem; } }
 
 @media (max-width: 500px) {
   html {
@@ -292,6 +399,8 @@ body {
     height: 20rem; } }
 
 @media (max-width: 350px) {
+  .banner-primary {
+    padding: 1rem; }
   .button-row {
     flex-direction: column;
     justify-content: center; }

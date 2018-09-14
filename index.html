@@ -10,14 +10,14 @@
 
     <title>Meblowy</title>
 </head>
-<body>
+<body onresize="changeGridLayout(number)">
     <div class="container">
         <!-- -----------------------BANNER PRIMARY----------------------- -->
         <div class="banner-primary">
-
             <div class="banner-primary__clock">
                 <h2>Gorący</h2>
                 <h2>Czwartek</h2>
+                <div class="banner-primary__bubble"><span>Właśnie</span><span>trwa!</span></div>
             </div>
 
             <div class="banner-primary__sale">
@@ -36,8 +36,8 @@
                     <span id="minute">16</span>:
                     <span id="second">42</span>                    
                 </div>
-
             </div>
+            <img src="/dostawa.png" alt="grafika_dostawy" class="dostawa">
         </div>
         <!-- ----------------------BANNER SECONDARY---------------------- -->
          <div class="banner-secondary">
@@ -52,210 +52,13 @@
                 <svg>
                     <use xlink:href="sprite.svg#icon-exclamation-solid"></use>
                 </svg>
-                <p>Akcja gorący czwartek nie łączy się z innymi promocjami</p>
+                <p>Akcja "gorący czwartek" nie łączy się z innymi promocjami</p>
             </div>
         </div>
 
         <!-- ----------------------------GRID---------------------------- -->
         <div class="grid">
 
-            <div class="item">
-                <div class="item-row">
-                    <button class="item__cart">
-                        <svg>
-                            <use xlink:href="sprite.svg#icon-cart"></use>
-                        </svg>
-                        <p>sztuk: 1</p> 
-                    </button>
-                    <div class="item__sale">oszczędzasz <span>2000zł</span></div>
-                </div>
-            <!-- -------------------------------------------------- -->
-                <img src="/kanapa.jpg" alt="Produkt" class="item__image">
-            <!-- -------------------------------------------------- -->
-                <div class="item-row item-row--close">
-                    <div class="item-row__price--higher">3690 zł</div>
-                    <div class="item-row__price--lower">5690 zł</div>
-                </div>
-            <!-- -------------------------------------------------- -->
-                <div class="item__description">Kanapa 3 firmy Kler kolekcja Cannone W001</div>
-            <!-- -------------------------------------------------- -->
-                <div class="item__manufacturer">Grupa Kler</div>
-            </div>
-
-<!-- -------------------------------------------------- -->
-<!-- -------------------------------------------------- -->
-            <div class="item">
-                <div class="item-row">
-                    <button class="item__cart">
-                        <svg>
-                            <use xlink:href="sprite.svg#icon-cart"></use>
-                        </svg>
-                        <p>sztuk: 1</p> 
-                    </button>
-                    <div class="item__sale">oszczędzasz <span>2000zł</span></div>
-                </div>
-                <!-- -------------------------------------------------- -->
-                <img src="/kanapa.jpg" alt="Produkt" class="item__image">
-                <!-- -------------------------------------------------- -->
-                <div class="item-row item-row--close">
-                    <div class="item-row__price--higher">3690 zł</div>
-                    <div class="item-row__price--lower">5690 zł</div>
-                </div>
-                <!-- -------------------------------------------------- -->
-                <div class="item__description">Kanapa 3 firmy Kler kolekcja Cannone W001</div>
-                <!-- -------------------------------------------------- -->
-                <div class="item__manufacturer">Grupa Kler</div>
-            </div>
-
-<!-- -------------------------------------------------- -->
-<!-- -------------------------------------------------- -->
-            <div class="item">
-                <div class="item-row">
-                    <button class="item__cart">
-                        <svg>
-                            <use xlink:href="sprite.svg#icon-cart"></use>
-                        </svg>
-                        <p>sztuk: 1</p> 
-                    </button>
-                    <div class="item__sale">oszczędzasz <span>2000zł</span></div>
-                </div>
-                <!-- -------------------------------------------------- -->
-                <img src="/kanapa.jpg" alt="Produkt" class="item__image">
-                <!-- -------------------------------------------------- -->
-                <div class="item-row item-row--close">
-                    <div class="item-row__price--higher">3690 zł</div>
-                    <div class="item-row__price--lower">5690 zł</div>
-                </div>
-                <!-- -------------------------------------------------- -->
-                <div class="item__description">Kanapa 3 firmy Kler kolekcja Cannone W001</div>
-                <!-- -------------------------------------------------- -->
-                <div class="item__manufacturer">Grupa Kler</div>
-            </div>
-
-<!-- -------------------------------------------------- -->
-<!-- -------------------------------------------------- -->
-            <div class="item">
-                <div class="item-row">
-                    <button class="item__cart">
-                        <svg>
-                            <use xlink:href="sprite.svg#icon-cart"></use>
-                        </svg>
-                        <p>sztuk: 1</p> 
-                    </button>
-                    <div class="item__sale">oszczędzasz <span>2000zł</span></div>
-                </div>
-                <!-- -------------------------------------------------- -->
-                <img src="/kanapa.jpg" alt="Produkt" class="item__image">
-                <!-- -------------------------------------------------- -->
-                <div class="item-row item-row--close">
-                    <div class="item-row__price--higher">3690 zł</div>
-                    <div class="item-row__price--lower">5690 zł</div>
-                </div>
-                <!-- -------------------------------------------------- -->
-                <div class="item__description">Kanapa 3 firmy Kler kolekcja Cannone W001</div>
-                <!-- -------------------------------------------------- -->
-                <div class="item__manufacturer">Grupa Kler</div>
-            </div>
-
-<!-- -------------------------------------------------- -->
-<!-- -------------------------------------------------- -->
-            <div class="item">
-                <div class="item-row">
-                    <button class="item__cart">
-                        <svg>
-                            <use xlink:href="sprite.svg#icon-cart"></use>
-                        </svg>
-                        <p>sztuk: 1</p> 
-                    </button>
-                    <div class="item__sale">oszczędzasz <span>2000zł</span></div>
-                </div>
-                <!-- -------------------------------------------------- -->
-                <img src="/kanapa.jpg" alt="Produkt" class="item__image">
-                <!-- -------------------------------------------------- -->
-                <div class="item-row item-row--close">
-                    <div class="item-row__price--higher">3690 zł</div>
-                    <div class="item-row__price--lower">5690 zł</div>
-                </div>
-                <!-- -------------------------------------------------- -->
-                <div class="item__description">Kanapa 3 firmy Kler kolekcja Cannone W001</div>
-                <!-- -------------------------------------------------- -->
-                <div class="item__manufacturer">Grupa Kler</div>
-            </div>
-
-<!-- -------------------------------------------------- -->
-<!-- -------------------------------------------------- -->
-            <div class="item">
-                <div class="item-row">
-                    <button class="item__cart">
-                        <svg>
-                            <use xlink:href="sprite.svg#icon-cart"></use>
-                        </svg>
-                        <p>sztuk: 1</p> 
-                    </button>
-                    <div class="item__sale">oszczędzasz <span>2000zł</span></div>
-                </div>
-                <!-- -------------------------------------------------- -->
-                <img src="/kanapa.jpg" alt="Produkt" class="item__image">
-                <!-- -------------------------------------------------- -->
-                <div class="item-row item-row--close">
-                    <div class="item-row__price--higher">3690 zł</div>
-                    <div class="item-row__price--lower">5690 zł</div>
-                </div>
-                <!-- -------------------------------------------------- -->
-                <div class="item__description">Kanapa 3 firmy Kler kolekcja Cannone W001</div>
-                <!-- -------------------------------------------------- -->
-                <div class="item__manufacturer">Grupa Kler</div>
-            </div>
-
-<!-- -------------------------------------------------- -->
-<!-- -------------------------------------------------- -->
-            <div class="item">
-                <div class="item-row">
-                    <button class="item__cart">
-                        <svg>
-                            <use xlink:href="sprite.svg#icon-cart"></use>
-                        </svg>
-                        <p>sztuk: 1</p> 
-                    </button>
-                    <div class="item__sale">oszczędzasz <span>2000zł</span></div>
-                </div>
-                <!-- -------------------------------------------------- -->
-                <img src="/kanapa.jpg" alt="Produkt" class="item__image">
-                <!-- -------------------------------------------------- -->
-                <div class="item-row item-row--close">
-                    <div class="item-row__price--higher">3690 zł</div>
-                    <div class="item-row__price--lower">5690 zł</div>
-                </div>
-                <!-- -------------------------------------------------- -->
-                <div class="item__description">Kanapa 3 firmy Kler kolekcja Cannone W001</div>
-                <!-- -------------------------------------------------- -->
-                <div class="item__manufacturer">Grupa Kler</div>
-            </div>
-
-<!-- -------------------------------------------------- -->
-<!-- -------------------------------------------------- -->
-            <div class="item">
-                <div class="item-row">
-                    <button class="item__cart">
-                        <svg>
-                            <use xlink:href="sprite.svg#icon-cart"></use>
-                        </svg>
-                        <p>sztuk: 1</p> 
-                    </button>
-                    <div class="item__sale">oszczędzasz <span>2000zł</span></div>
-                </div>
-                <!-- -------------------------------------------------- -->
-                <img src="/kanapa.jpg" alt="Produkt" class="item__image">
-                <!-- -------------------------------------------------- -->
-                <div class="item-row item-row--close">
-                    <div class="item-row__price--higher">3690 zł</div>
-                    <div class="item-row__price--lower">5690 zł</div>
-                </div>
-                <!-- -------------------------------------------------- -->
-                <div class="item__description">Kanapa 3 firmy Kler kolekcja Cannone W001</div>
-                <!-- -------------------------------------------------- -->
-                <div class="item__manufacturer">Grupa Kler</div>
-            </div>
             
         </div>
 
@@ -268,5 +71,6 @@
     </div>
 
     <script src="javascript/coundown.js"></script>
+    <script src="javascript/script.js"></script>
 </body>
 </html>

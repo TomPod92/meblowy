@@ -1,32 +1,101 @@
 @media (max-width:1200px) {
     .container {width: 90vw;}
+
+    .banner-primary {
+        padding: 3rem 6rem;
+        &__countDown {width: 30rem;}    
+    }
+    
+}
+//-----------------------------------------------------------------
+@media (max-width: 1100px) {
+    .banner-primary {
+        &__sale {
+            margin-left: 12rem;
+        
+            h2:nth-child(odd) {
+                transform: translate(0, 0);
+                font-size: 1.5rem;
+            }
+    
+            h2:nth-child(even) {
+                font-size: 11rem;    
+                span:nth-child(even) {font-size: 6rem;}
+            }
+        }
+        
+       
+    }
 }
 
+//-----------------------------------------------------------------
 @media (max-width: 1000px) {
     html {font-size: 50%;}
 }
-
+//-----------------------------------------------------------------
 @media (max-width: 800px) {
     .container {width: 95vw;}
     .banner-secondary {padding: 1rem 0;}
     .item{padding: 0;}
-}
 
-@media (max-width: 700px) {
-    .grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+    .banner-primary__sale {
+        margin:0 2rem 0 13rem;
+        h2:nth-child(odd) {font-size: 1.2rem;}
+        h2:nth-child(even) {
+            font-size: 10rem;
+            
+            span:nth-child(even) {font-size: 6rem;}
+        }
     }
 
-    .item__image {height: 25rem;}
+    .banner-primary {
+        &__countDown {          
+            h2 {font-size: 1.7rem;}
+            .date-row {font-size:3rem;}
+        }
+    }
+}
+//-----------------------------------------------------------------
+@media (max-width: 700px) {
+    .grid {
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: 1fr 1fr 1fr 1fr; 
+    }
+
+    .banner-primary {
+        padding: 2rem 4rem;
+        flex-wrap: wrap;
+        justify-content: center; 
+        height: auto;
+
+        &__sale {
+            h2:nth-child(odd) {font-size: 1rem;}
+            h2:nth-child(even) {
+                font-size: 10rem;
+                
+                span:nth-child(even) {font-size: 5rem;}
+            }
+        }
+
+        &__clock {margin: 3rem;}
+
+        &__countDown {height: 15rem;}
+    
+    }
 
     .banner-secondary {
         &__info,
         &__sale-alert {font-size: 1.25rem;}
     }    
-}
 
+    .dostawa {
+        bottom: -3%;
+        left: 85%;
+    }
+}
+//-----------------------------------------------------------------
 @media (max-width: 600px) {
+
     .banner-secondary {
         flex-direction: column;
         justify-content: space-evenly;
@@ -44,14 +113,28 @@
         padding: .6rem 1rem;
     }
 }
+//-----------------------------------------------------------------
+@media (max-width: 540px) {
+    .banner-primary {flex-direction: column;}
+    .banner-primary__sale {
+        margin:0; 
+        h2:nth-child(odd) {font-size: 3rem;}
+        h2:nth-child(even) {
+            font-size: 15rem;
+            
+            span:nth-child(even) {font-size: 7rem;}
+        }
+    }
+}
 
+//-----------------------------------------------------------------
 @media (max-width: 500px) {
     html {font-size: 42%;}
 
     .item__description {font-size: 2rem;}
     .item__manufacturer {font-size: 1.5rem;}
 }
-
+//-----------------------------------------------------------------
 @media (max-width: 400px) {
     .banner-secondary {
         height: 6rem;
@@ -62,8 +145,11 @@
     .grid {grid-gap: .5rem;}
     .item__image {height: 20rem;}
 }
-
+//-----------------------------------------------------------------
 @media (max-width: 350px) {
+
+    .banner-primary {padding:1rem;}
+
     .button-row {
        flex-direction: column;
        justify-content: center;

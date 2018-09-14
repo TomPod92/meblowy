@@ -11,7 +11,7 @@
     background-color: rgb(250, 249, 249); //test
     padding: 1rem 3rem;
     margin-bottom: 2rem;
-    text-transform: uppercase;
+    
 
     &__info,
     &__sale-alert {
@@ -23,11 +23,13 @@
     }
 
     &__info {
+        text-transform: uppercase;
 
         & svg {
             width: 3rem;
             height: 3rem;
             margin-right: 2rem;
+            fill: var(--color-primary-red);
         }
 
         & p span {font-weight: bold;}
@@ -42,6 +44,8 @@
             fill: red;
             animation: pulse 1.2s infinite alternate;
         }
+
+        
         
     }
 }

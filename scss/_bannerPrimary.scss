@@ -1,34 +1,41 @@
 .banner-primary {
     height: 15rem;
-    background-color: #EA2423;
+    background-color: var(--color-primary-red);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 4rem 8rem;
+    padding: 3rem 4rem;
     line-height: normal;
     text-transform: uppercase;
+    position: relative; //test
+    overflow: hidden; //test
 
     &__clock {
         font-size: 2.5rem;
+        position: relative;
 
         h2:nth-child(odd) {color: white;}
-        h2:nth-child(even) {color: yellow;}
+        h2:nth-child(even) {color: var(--color-primary-yellow);}
     }
 
     &__sale {
+        margin-left: 15rem;
         
         h2:nth-child(odd) {
+            transform: translate(2rem, 2rem);
             font-size: 1.5rem;
             color: black;
+            font-weight: 400;
         }
 
         h2:nth-child(even) {
             font-size: 15rem;
-            color: yellow;
+            color: var(--color-primary-yellow);
             display: flex;
             font-weight: 300;
 
             span:nth-child(even) {
+                margin-top: 1.5rem;
                 font-size: 9rem;
                 align-self:flex-start;
             }
@@ -43,16 +50,19 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        
 
         h2 {
             font-size: 2.3rem;
             color: white;
-            margin-bottom: 1.5rem;
+            margin-bottom: .7rem;
+            font-weight: 300;
         }
 
         .date-row {
             font-size:4rem;
             color: white;
+            font-weight: 700;
         }
 
         #day, #hour, #minute, #second {position: relative;}
@@ -70,4 +80,48 @@
         #minute:after {content: 'MIN';}
         #second:after {content: 'SEK';}
     }
+
+    &__bubble {
+        background: black;
+        padding: 1rem;
+        font-size: 1.7rem;
+        text-align: center;
+        font-weight: 700;
+        color: #fff;
+        position: absolute;
+        top: -10%;
+        left: 90%;
+
+        &:before {
+            content: "";
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            border-left: 20px solid black;
+            border-right: 20px solid transparent;
+            border-top: 10px solid black;
+            border-bottom: 10px solid transparent;
+            left: 0px;
+            bottom: -19px;
+        }
+
+        span {
+            &:nth-child(odd) {
+                margin-right: .5rem;
+            }
+
+            &:nth-child(even) {
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+
+.dostawa {
+    position: absolute;
+    bottom: -5%;
+    left: 28%;
+    width: 9rem;
+    height: 9rem;
 }
